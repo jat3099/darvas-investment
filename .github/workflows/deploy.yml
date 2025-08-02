@@ -13,6 +13,12 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
+    # Add this environment block
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,7 +32,6 @@ jobs:
         run: npm install
 
       - name: Build
-        # This env block makes the secret API key available during the build process
         env:
           VITE_GEMINI_API_KEY: ${{ secrets.VITE_GEMINI_API_KEY }}
         run: npm run build
