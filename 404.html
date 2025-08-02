@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Darvas Investment - Redirecting...</title>
+    <script type="text/javascript">
+        // Get the current path and search query
+        var path = window.location.pathname;
+        var search = window.location.search;
+        var L = window.location.href.split('/').slice(0, -1).join('/') + '/';
+
+        // Reconstruct the intended path
+        var newPath = path.slice(L.length);
+
+        // Redirect using the session storage hack
+        sessionStorage.redirect = newPath;
+        window.location.href = L;
+    </script>
+</head>
+<body>
+</body>
+</html>

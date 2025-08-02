@@ -200,7 +200,7 @@ const ServicesPage: React.FC = () => {
     setServiceStates(prev => ({ ...prev, [serviceName]: { ...prev[serviceName], isLoading: true, error: null, result: null } }));
     
     try {
-        const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+        const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
         let result: AnalysisResult | ForecastResult | null = null;
         let prompt: string;
         let schema: any;
