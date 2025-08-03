@@ -1,28 +1,12 @@
+// src/App.tsx
 
-import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import ServicesPage from './pages/ServicesPage';
-import AboutPage from './pages/AboutPage';
-
-const App: React.FC = () => {
+function App() {
   return (
-    <HashRouter>
-      <div className="bg-[#0F1113] overflow-hidden">
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/about" element={<AboutPage />} />
-          </Routes>
-        </main>
-        <Footer />
+      <div style={{ padding: '50px', textAlign: 'center', fontSize: '24px' }}>
+        <h1>Hello World!</h1>
+        <p>If you can see this, the basic app is working.</p>
       </div>
-    </HashRouter>
   );
-};
+}
 
 export default App;
